@@ -4,25 +4,6 @@ require('mongoose-currency').loadType(mongoose);
 const Currency=mongoose.Types.Currency
 const passportlocalmongoose = require('passport-local-mongoose')
 
-const commentschema=new Schema({
-    rating:{
-        type: Number,
-        required: true,
-        min: 1,
-        max: 5,
-    },
-    comment:{
-        type: String,
-        required:true,
-    },
-    author:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
-    }
-},{
-    timestamps:true
-})
-
 const dishSchema=new Schema({
     name:{
         type: String,
@@ -53,8 +34,7 @@ const dishSchema=new Schema({
     featured:{
         type:Boolean,
         defalut:false
-    },
-    comments:[commentschema]
+    }
 },{
     timestamps:true
 });
