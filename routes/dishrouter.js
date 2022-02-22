@@ -14,7 +14,6 @@ dishrouter.route('/')
 })
 .get(cors.cors,(req,res,next)=>{
     dishes.find(req.query)
-    .populate('comments.author')
     .then((dishes)=>{
         res.statusCode=200;
         res.setHeader('Content-Type','application/json')
@@ -51,7 +50,6 @@ dishrouter.route('/:dishid')
 })
 .get(cors.cors,(req,res,next)=>{
     dishes.findById(req.params.dishid)
-    .populate('comments.author')
     .then((dish)=>{
         res.statusCode=200;
         res.setHeader('Content-Type','application/json');

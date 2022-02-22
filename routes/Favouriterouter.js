@@ -73,7 +73,7 @@ favouriterouter.route('/')
 })
 
 favouriterouter.route('/:dishid')
-.get(cors.cors.authenticate.verifyuser,(req,res,next)=>{
+.get(cors.cors,authenticate.verifyuser,(req,res,next)=>{
     favourite.find({"user":req.user._id})
     .then((fav)=>{
         if(!fav){

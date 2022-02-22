@@ -52,7 +52,7 @@ commentsRouter.route('/')
     },err=>next(err))
 })
 
-    dishrouter.route('/:commentid')
+    commentsRouter.route('/:commentid')
     .options(cors.cors,(req,res)=>{
         res.sendStatus(200)
     })
